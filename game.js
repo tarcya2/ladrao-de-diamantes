@@ -27,6 +27,8 @@ function preload (){
     fundoImg = loadImage("cenario.png");
     diamanteImg = loadImage("diamante.png");
     laserImg = loadImage("laser.png");
+    portaImg = loadImage("porta1.png");
+    portaAnim = loadAnimation("porta1.png", "porta2.png", "porta3.png", "porta4.png", "porta5.png");
 }
 
 function setup (){
@@ -41,7 +43,12 @@ function setup (){
     laser2.addImage("laser", laserImg);
 
     diamante = createSprite(358, 45);
-    diamante.addImage("diamante", diamanteImg)
+    diamante.addImage("diamante", diamanteImg);
+
+    porta = createSprite(359, 359);
+    porta.addImage("fechada", portaImg);
+    porta.addAnimation("abrindo", portaAnim);
+    porta.changeImage("fechada");
 }
 
 function draw (){
